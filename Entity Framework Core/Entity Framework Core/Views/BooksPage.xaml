@@ -13,12 +13,12 @@
                     iOS="50"/>
             </StackLayout.Padding>
             <StackLayout Orientation="Horizontal">
-                <Button Text="Add"
+                <Button Text="Agregar"
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand" 
                     Command="{Binding NeWBookCommand}"                             
                          />
-                <Button Text="List"                  
+                <Button Text="Listar"                  
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand" 
                     Command="{Binding LoadbookCommand}"                             

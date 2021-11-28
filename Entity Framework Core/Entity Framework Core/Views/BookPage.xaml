@@ -5,9 +5,10 @@
     <ContentPage.Content>
         <StackLayout Margin="5" BackgroundColor="LightBlue">
             <Label 
-                Text="Registro de Contactos"
+                Text="Registro de Obras"
+                FontSize="24"
                 HorizontalOptions="CenterAndExpand"
-                BackgroundColor="WhiteSmoke"/>
+                TextColor="#77d065"/>
 
             <Entry 
                 Placeholder="Introduce el Titulo"
@@ -31,8 +32,7 @@
                 Format="d"
                 Date='{Binding Fecha}'
                 />
-            <Label Text="Publicado"
-                   VerticalOptions="Center" />
+            
             <Switch x:Name="includeSwitchDisponible"
                     IsToggled ="{Binding Disponible}"
             />

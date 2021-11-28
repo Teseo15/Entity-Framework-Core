@@ -5,9 +5,10 @@
     <ContentPage.Content>
         <StackLayout Margin="5" BackgroundColor="LightBlue">
             <Label 
-                Text="{Binding ID}"
+                Text="Editar Obra Literaria"
                 HorizontalOptions="CenterAndExpand"
-                BackgroundColor="WhiteSmoke"/>
+                FontSize="22"
+                TextColor="#77d065"/>
 
             <Entry 
                 Placeholder="Introduce el Titulo"
