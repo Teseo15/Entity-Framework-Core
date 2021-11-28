@@ -13,11 +13,11 @@ namespace Entity_Framework_Core
         {
             InitializeComponent();
             GetContext().Database.EnsureCreated();
-            MainPage = new NavigationPage(new AlbumesPage());
+            MainPage = new NavigationPage(new BooksPage());
         }
         public static AppDbContext GetContext()
         {
-            string DbPath = DependencyService.Get<IConfigDataBase>().GetFullPath("efCore.db");
+            string DbPath = DependencyService.Get<IConfigDataBase>().GetFullPath("efCoreya.db");
 
             return new AppDbContext(DbPath);
         }

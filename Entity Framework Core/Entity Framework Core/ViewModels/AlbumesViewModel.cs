@@ -77,7 +77,7 @@ namespace Entity_Framework_Core.ViewModels
 
         private void NeWAlbum()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new AlbumPage());
+            Application.Current.MainPage.Navigation.PushAsync(new BookPage());
 
         }
         private void LoadAlbumes()
@@ -88,9 +88,10 @@ namespace Entity_Framework_Core.ViewModels
             Console.WriteLine("HOLA Cancelado");
 
         }
-
+        
         private void CreateArtistas()
         {
+            /*
             var artistas = new List<Artista>()
             {
                 new Artista { Nombre = "Ricardo Arjona" },
@@ -98,7 +99,7 @@ namespace Entity_Framework_Core.ViewModels
                 new Artista { Nombre = "Luis Miguel" }
             };
 
-            this.dataServiceArtistas.CreateList(artistas);
+            this.dataServiceArtistas.CreateList(artistas);*/
         }
         #endregion Methods
     }

@@ -17,7 +17,7 @@ namespace Entity_Framework_Core.DataContext
         public DbSet<Artista> Artistas { get; set; }
         public DbSet<Album> Albumes { get; set; }
 
-
+        public DbSet<Book> Books { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
