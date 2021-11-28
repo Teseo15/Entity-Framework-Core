@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout Margin="5" BackgroundColor="LightBlue">
             <Label 
-                Text="Registro de Contactos"
+                Text="{Binding ID}"
                 HorizontalOptions="CenterAndExpand"
                 BackgroundColor="WhiteSmoke"/>
 
@@ -13,16 +13,19 @@
                 Placeholder="Introduce el Titulo"
                 Keyboard="Text"
                 Text="{Binding Titulo}"
+                 ClearButtonVisibility="WhileEditing"
                 x:Name="txtTitulo"/>
             <Entry 
                 Placeholder="Introduce el author"
                 Keyboard="Text"
                 Text="{Binding Author}"
+                 ClearButtonVisibility="WhileEditing"
                 x:Name="txtAuthor"/>
 
             <Entry 
                 Keyboard="Numeric"
                 Placeholder="Introduce el Precio"
+                 ClearButtonVisibility="WhileEditing"
                 Text="{Binding Precio}"
                 x:Name="txtPrecio"/>
             <DatePicker 

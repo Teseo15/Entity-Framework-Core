@@ -25,10 +25,16 @@ namespace Entity_Framework_Core.ViewModels
         private double precio;
         private bool disponible;
         private DateTime fecha;
-        public int bookidparam;
+        private int bookidparam;
+        
         #endregion
 
         #region Properties
+        public int ID
+        {
+            get { return bookidparam; }
+        }
+
         public string Titulo
         {
             get { return titulo; }
@@ -119,10 +125,33 @@ namespace Entity_Framework_Core.ViewModels
         {
             get
             {
-                return new Command( () =>
+                return new Command(async () =>
                 {
-                    
-                    Application.Current.MainPage.DisplayAlert("Actualizar", "Se actualizó con exito ${bookidparam}", "OK");
+                    var newBook = new Book()
+                    {
+                        BookID =this.ID,
+                        Titulo = this.Titulo,
+                        Author = this.Author,
+                        Precio = this.Precio,
+                        Disponible = this.Disponible,
+                        Fecha = this.Fecha,
+
+                    };
+                    if (newBook != null)
+                    {
+                         this.dataServiceBooks.Update(newBook, this.ID);
+
+
+                        await Application.Current.MainPage.
+                            DisplayAlert("Actualización Exitosa",
+                                         "actualizado correctamente en la base de datos", "Ok");
+
+                        this.Titulo = string.Empty;
+                        this.Author = string.Empty;
+                        this.Precio = 0;
+                        this.Disponible = true;
+                        await Application.Current.MainPage.Navigation.PopAsync();
+                    }
                 });
             }
         }
@@ -133,7 +162,8 @@ namespace Entity_Framework_Core.ViewModels
         public BookFailViewModel(int variable)
         {
             bookidparam = variable;
-           
+            this.dataServiceBooks = new BookService();
+            this.LoadAlbumes();
         }
         public BookFailViewModel()
         {
@@ -143,7 +173,15 @@ namespace Entity_Framework_Core.ViewModels
         #endregion Constructor
 
         #region Methods
-
+        private void LoadAlbumes()
+        {
+            var databook = this.dataServiceBooks.GetByID(bookidparam);
+            titulo = databook.Titulo;
+            author = databook.Author;
+            precio = databook.Precio;
+            fecha = databook.Fecha;
+            disponible = databook.Disponible;
+        }
         #endregion
     }
 

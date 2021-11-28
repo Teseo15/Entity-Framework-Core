@@ -85,6 +85,12 @@ namespace Entity_Framework_Core.ViewModels
             this.dataServiceBooks = new BookService();
             this.LoadBooks();
         }
+        public BooksFailsViewModel()
+        {
+
+            this.dataServiceBooks = new BookService();
+            this.LoadBooks();
+        }
         #endregion Constructor
 
 
@@ -100,9 +106,6 @@ namespace Entity_Framework_Core.ViewModels
         {
             var booksDB = this.dataServiceBooks.Get();
             this.Books = new ObservableCollection<Book>(booksDB);
-
-            Console.WriteLine("HOLA Cancelado");
-
         }
         #endregion Methods
     }

@@ -46,8 +46,12 @@ namespace Entity_Framework_Core.Services
         public void Update(Book item, int ID)
         {
             var model = GetByID(ID);
+            model.Author = item.Author;
             model.Precio = item.Precio;
             model.Titulo = item.Titulo;
+            model.Fecha = item.Fecha;
+            model.Disponible = item.Disponible;
+            
             _context.SaveChanges();
         }
         public void Delete(int ID)
